@@ -1,5 +1,19 @@
 import React, { useEffect } from "react"
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { addTodo } from '../redux/todoSlice'
+import TodoList from '../component/test/TodoList'
+
+const ReduxEX = () => {
+    const dispatch = useDispatch()
+    return (
+        <div>
+            <h2 style={{marginTop: '30px'}}>Redux 讀改資料</h2>
+            <TodoList />
+            <button onClick={() => dispatch(addTodo('test'))}>add</button>
+        </div>
+    )
+}
 
 const AxiosEx = () => {
     const [data, setData] = React.useState([])
@@ -12,7 +26,7 @@ const AxiosEx = () => {
 
     return (
         <div>
-            <h2>Axios</h2>
+            <h2 style={{marginTop: '30px'}}>Axios</h2>
             {data.map((item, index) => (
                 <p key={index}>{item.title} : {item.txt}</p>
             ))}
@@ -25,6 +39,7 @@ const ViewA = () => {
         <>
             <h1>ViewA</h1>
             <AxiosEx />
+            <ReduxEX />
         </>
     )
 }

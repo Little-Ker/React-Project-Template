@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import logo from './logo.svg'
+import './App.css'
 import styles from './app.module.sass'
 import clsx from 'clsx'
 import PropTypes from 'prop-types'
@@ -38,7 +38,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

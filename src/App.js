@@ -3,9 +3,9 @@ import {
   BrowserRouter as Router, Route, Routes 
 } from 'react-router-dom'
 import './App.css'
-import Navbar from './component/navbar/Navbar'
-import ViewA from './view/ViewA'
-import ViewB from './view/ViewB'
+import Navbar from 'component/navbar/Navbar'
+import ViewA from 'view/ViewA'
+import ViewB from 'view/ViewB'
  
 const RouterPage = () => {
   return (

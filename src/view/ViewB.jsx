@@ -6,7 +6,7 @@ import {
 } from 'react-redux'
 import {
   fetchTitleData 
-} from '../redux/todoAxiosSlice'
+} from 'redux/todoAxiosSlice'
 
 const TodoAxiosList = () => {
   const dispatch = useDispatch()

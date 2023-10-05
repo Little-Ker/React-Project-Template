@@ -7,8 +7,8 @@ import {
 } from 'react-redux'
 import {
   addTodo 
-} from '../redux/todoSlice'
-import TodoList from '../component/test/TodoList'
+} from 'redux/todoSlice'
+import TodoList from 'component/test/TodoList'
 
 const ReduxEX = () => {
   const dispatch = useDispatch()

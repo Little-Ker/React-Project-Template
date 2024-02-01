@@ -1,15 +1,19 @@
 import React from 'react'
 import clsx from 'clsx'
-import styles from './navbar.module.sass'
 import {
-  Link, useLocation  
+  Link, useLocation
 } from 'react-router-dom'
+import styles from './navbar.module.sass'
 
 const linkList = [
-  {name: 'ViewA',
-    to: '/viewA'},
-  {name: 'ViewB',
-    to: '/viewB'},
+  {
+    name: 'ViewA',
+    to: '/viewA',
+  },
+  {
+    name: 'ViewB',
+    to: '/viewB',
+  },
 ]
 
 export default function Navbar() {
@@ -19,9 +23,10 @@ export default function Navbar() {
     <div className={styles.navbar}>
       {linkList.map((link, index) => (
         <Link
-          key={index}
+          key={`${index.toString()}`}
           to={link.to}
-          className={clsx(styles.link, location.pathname === `${link.to}` && styles.active)}>
+          className={clsx(styles.link, location.pathname === `${link.to}` && styles.active)}
+        >
           {link.name}
         </Link>
       ))}

@@ -1,16 +1,16 @@
 import {
-  createAsyncThunk, createSlice 
+  createAsyncThunk, createSlice
 } from '@reduxjs/toolkit'
 import axios from 'axios'
- 
-export const fetchTitleData  = createAsyncThunk(
+
+export const fetchTitleData = createAsyncThunk(
   'axios/fetchTitleData',
   async () => {
     const response = await axios.get('/data/dataList.json')
     return response.data.titleData
   }
 )
- 
+
 export const todoAxiosSlice = createSlice({
   name: 'axios',
   initialState: {
@@ -18,11 +18,10 @@ export const todoAxiosSlice = createSlice({
   },
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(
-      fetchTitleData.fulfilled, (state, action) => {
-        state.titleData = action.payload
-      })
+    builder.addCase(fetchTitleData.fulfilled, (state, action) => {
+      state.titleData = action.payload
+    })
   },
 })
- 
+
 export default todoAxiosSlice.reducer

@@ -1,27 +1,28 @@
+/* eslint-disable react/button-has-type */
 import React, {
-  useEffect 
+  useEffect
 } from 'react'
 import axios from 'axios'
 import {
-  useDispatch 
+  useDispatch
 } from 'react-redux'
 import {
-  addTodo 
+  addTodo
 } from 'redux/todoSlice'
 import TodoList from 'component/test/TodoList'
 
-const ReduxEX = () => {
+function ReduxEX() {
   const dispatch = useDispatch()
   return (
     <div>
-      <h2 style={{marginTop: '30px'}}>Redux 讀改資料</h2>
+      <h2 style={{ marginTop: '30px' }}>Redux 讀改資料</h2>
       <TodoList />
       <button onClick={() => dispatch(addTodo('test'))}>add</button>
     </div>
   )
 }
 
-const AxiosEx = () => {
+function AxiosEx() {
   const [data, setData] = React.useState([])
 
   useEffect(() => {
@@ -32,15 +33,21 @@ const AxiosEx = () => {
 
   return (
     <div>
-      <h2 style={{marginTop: '30px'}}>Axios</h2>
+      <h2 style={{ marginTop: '30px' }}>Axios</h2>
       {data.map((item, index) => (
-        <p key={index}>{item.title} : {item.txt}</p>
+        <p key={`${index.toString()}`}>
+          {item.title}
+          {' '}
+          :
+          {' '}
+          {item.txt}
+        </p>
       ))}
     </div>
   )
 }
 
-const ViewA = () => {
+function ViewA() {
   return (
     <>
       <h1>ViewA</h1>

@@ -1,14 +1,14 @@
 import {
-  React, useEffect 
+  React, useEffect
 } from 'react'
 import {
-  useSelector, useDispatch 
+  useSelector, useDispatch
 } from 'react-redux'
 import {
-  fetchTitleData 
+  fetchTitleData
 } from 'redux/todoAxiosSlice'
 
-const TodoAxiosList = () => {
+function TodoAxiosList() {
   const dispatch = useDispatch()
   const titleDate = useSelector(state => state.todoAxios.titleData)// <-- 拿取資料
 
@@ -18,15 +18,21 @@ const TodoAxiosList = () => {
 
   return (
     <ul>
-      <h2 style={{marginTop: '30px'}}>Redux - 使用 axios 讀取資料</h2>
+      <h2 style={{ marginTop: '30px' }}>Redux - 使用 axios 讀取資料</h2>
       {titleDate.map((val, index) => (
-        <li key={index}>{val.title} : {val.txt}</li>
+        <li key={`${index.toString()}`}>
+          {val.title}
+          {' '}
+          :
+          {' '}
+          {val.txt}
+        </li>
       ))}
     </ul>
   )
 }
 
-const ViewB = () => {
+function ViewB() {
   return (
     <>
       <h1>ViewB</h1>

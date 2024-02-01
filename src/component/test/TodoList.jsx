@@ -1,8 +1,9 @@
 import React from 'react'
 import {
-  useSelector 
+  useSelector
 } from 'react-redux'
-const TodoList = () => {
+
+function TodoList() {
   const states = useSelector(state => state.todos) // <-- 拿取資料
   return (
     <ul>
@@ -12,5 +13,5 @@ const TodoList = () => {
     </ul>
   )
 }
- 
+
 export default TodoList

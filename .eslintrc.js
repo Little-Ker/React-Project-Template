@@ -6,20 +6,41 @@ module.exports = {
     node: true,
   },
   'extends': [
+    'airbnb',
     'eslint:recommended',
     'plugin:react/recommended',
   ],
+  'settings': {
+    'import/resolver': {
+      'node': {
+        'moduleDirectory': [
+          'node_modules',
+          'src/',
+        ],
+      },
+    },
+  },
+  'parser': '@babel/eslint-parser',
   'parserOptions': {
     'ecmaFeatures': {
       'jsx': true,
     },
     'ecmaVersion': 'latest',
     'sourceType': 'module',
+    'allowImportExportEverywhere': false,
+    'codeFrame': false,
+    'requireConfigFile': false,
   },
   'plugins': [
     'react',
+    'react-hooks',
+    '@babel',
   ],
   rules: {
+    // 'no-restricted-exports': ['error', {
+    //   restrictedNamedExports: [],
+    // }],
+    'no-restricted-exports': ['off'], // 關閉該規則
     indent: [2, 2], // 縮排規則，index[0] 的數字代表含意為 關閉(0), 警告(1), 錯誤(2)
     'no-unused-vars': [
       'warn',
@@ -45,6 +66,15 @@ module.exports = {
         classes: true,
       },
     ],
+    'react/jsx-filename-extension': [
+      2,
+      {
+        'extensions': [
+          '.js',
+          '.jsx',
+        ],
+      },
+    ],
     'no-param-reassign': [
       'error',
       {
@@ -57,6 +87,12 @@ module.exports = {
       'as-needed',
       {
         requireForBlockBody: true,
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        'devDependencies': true,
       },
     ],
     'no-plusplus': [
@@ -78,14 +114,28 @@ module.exports = {
       beforeColon: false,
       afterColon: true,
     }],
-    'import/first': [0], // 雖說 import 都會先 Hoisting，在這些行數中間可否插入其他的變數或是函式 
+    'react/jsx-props-no-spreading': [
+      2,
+      {
+        'custom': 'ignore',
+      },
+    ],
+    'react/jsx-curly-brace-presence': [0, 'ignore'],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react/forbid-prop-types': [
+      2,
+      {
+        'forbid': [
+          'any',
+        ],
+      },
+    ],
+    'react/destructuring-assignment': [0, 'always'],
+    'import/no-cycle': [0, 'always'],
+    'import/first': [0], // 雖說 import 都會先 Hoisting，在這些行數中間可否插入其他的變數或是函式
     'object-property-newline': [2, { // Object 的撰寫規則，詳請請查閱官方文件
-      allowAllPropertiesOnSameLine: false,
-    }],
-    'object-curly-newline': [1, { // Object 的撰寫規則，詳請請查閱官方文件
-      ImportDeclaration: 'always',
-      ExportDeclaration: 'never',
+      allowAllPropertiesOnSameLine: true,
     }],
   },
 }
-  

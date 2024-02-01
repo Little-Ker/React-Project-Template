@@ -1,0 +1,83 @@
+{
+  // vscode setting.json 設定
+  /**************
+   * Text Editor
+   **************/
+  "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "files.associations": {
+    ".hbs": "handlebars"
+  },
+  "[handlebars]": {
+    "editor.formatOnSave": false
+  },
+  "editor.minimap.enabled": true,
+  "editor.mouseWheelZoom": true,
+  "editor.snippetSuggestions": "bottom",
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "files.autoSave": "onWindowChange",
+  "files.trimTrailingWhitespace": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Material Theme",
+  /**************
+   * Eslint
+   **************/
+  "eslint.options": {
+    //指定vscode的eslint所處理的檔案的字尾
+    // "configFile": "C:/Users/kenchen/Desktop/frontend-react/react/.eslintrc.json",
+  },
+  "eslint.enable": true, //是否開啟vscode的eslint
+  "eslint.validate": [
+    "javascript",
+    "html",
+    "hbs",
+    "handlebars",
+    "javascriptreact",
+    "typescript",
+    "vue"
+  ],
+  "eslint.format.enable": true,
+  "go.delveConfig": {
+    "debugAdapter": "legacy"
+  },
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.validate.enable": false,
+  "javascript.validate.enable": false,
+  "cSpell.userWords": ["clsx", "cowor", "pako", "ungzip", "Monokai", "yile"],
+  "eslint.alwaysShowStatus": true,
+  // Emmet
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "vue": "html"
+  },
+  "terminal.integrated.env.windows": {},
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1,
+  "editor.language.colorizedBracketPairs": [
+
+  ],
+  "eslint.timeBudget.onFixes": {
+    "warn": 3000,
+    "error": 6000
+  },
+  "editor.indentSize": "tabSize",
+  "editor.fontVariations": false,
+  "eslint.codeActionsOnSave.rules": null,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+}

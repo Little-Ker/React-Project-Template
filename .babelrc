@@ -1,0 +1,32 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ],
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "root": ".",
+          "src": "./src",
+          "components": "./src/components",
+          "globalTheme": "./src/globalTheme",
+          "contexts": "./src/contexts",
+          "hook": "./src/hook",
+          "services": "./src/services",
+          "views": "./src/views",
+          "utils": "./src/utils",
+          "router": "./src/router"
+        }
+      }
+    ]
+  ]
+}
